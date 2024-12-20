@@ -1,79 +1,166 @@
-# Define the quiz questions and correct answers
-quiz_questions = [
-    {
-        "question": "Artificial Intelligence is _____",
-        "options": [
-            "a branch of computer algorithms that facilitates an expert machine to make accurate predictions",
-            "is a branch of computer science constituting underlying technology that governs expert machines",
-            "a branch of computer science that constitutes underlying technology that enables computers to simulate human intelligence"
-        ],
-        "correct_answer": 2  # The correct answer is the 3rd option (index 2)
-    },
-    {
-        "question": "Which of the following statements about machine learning is TRUE?",
-        "options": [
-            "Machine learning is the intelligent technology an expert system uses to make accurate predictions",
-            "Machine learning is the intelligence technology developed for expert machines to facilitate the learning processes of various tasks",
-            "Machine learning and Artificial intelligence are synonymous",
-            "Machine learning is the intelligence technology that provides computers with advanced abilities to execute processes without being specifically programmed to do so"
-        ],
-        "correct_answer": 3  # The correct answer is the 4th option (index 3)
-    },
-    {
-        "question": "True or False: The late 1980s marked a resurgence in the development of artificial intelligence (AI), driven by advancements in areas like chess and computer vision.",
-        "options": ["True", "False"],
-        "correct_answer": 0  # The correct answer is "True" (index 0)
-    }
-]
+1. Clustering in Unsupervised Learning
 
-# Function to display the quiz and check answers
-def run_quiz():
-    score = 0  # Initialize score to 0
-    for i, question in enumerate(quiz_questions):
-        print(f"Q{i + 1}: {question['question']}")
-        for j, option in enumerate(question["options"]):
-            print(f"  {j + 1}. {option}")
-        
-        # Get the user's answer
-        answer = int(input("Please enter the number of your answer: ")) - 1
-        
-        # Check if the answer is correct
-        if answer == question["correct_answer"]:
-            print("Correct!\n")
-            score += 1  # Increment score if correct
-        else:
-            print(f"Incorrect! The correct answer was: {question['options'][question['correct_answer']]}\n")
-    
-    # Print the user's score
-    print(f"Your total score is {score}/{len(quiz_questions)}")
 
-# Run the quiz
-run_quiz()
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_blobs
+from sklearn.cluster import KMeans
+
+# Generate a synthetic dataset with three clusters
+X, _ = make_blobs(n_samples=300, centers=3, random_state=42)
+
+# Visualize the data points
+plt.scatter(X[:, 0], X[:, 1], s=50)
+plt.title("Synthetic Data with Three Clusters")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.show()
+
+# Apply K-Means clustering with K=3
+kmeans = KMeans(n_clusters=3, random_state=42)
+kmeans.fit(X)
+
+# Get the cluster assignments for each data point
+cluster_labels = kmeans.labels_
+
+# Get the cluster centroids
+cluster_centers = kmeans.cluster_centers_
+
+# Visualize the clustered data
+plt.scatter(X[:, 0], X[:, 1], c=cluster_labels, s=50, cmap='viridis')
+plt.scatter(cluster_centers[:, 0], cluster_centers[:, 1], c='red', marker='X', s=200, label='Cluster Centers')
+plt.title("K-Means Clustering Results (K=3)")
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.legend()
+plt.show()
 
 
 
 
+2. Dimensionality reduction
 
 
-Q1: Artificial Intelligence is _____
-  1. a branch of computer algorithms that facilitates an expert machine to make accurate predictions
-  2. is a branch of computer science constituting underlying technology that governs expert machines
-  3. a branch of computer science that constitutes underlying technology that enables computers to simulate human intelligence
-Please enter the number of your answer:  3
-Correct!
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
 
-Q2: Which of the following statements about machine learning is TRUE?
-  1. Machine learning is the intelligent technology an expert system uses to make accurate predictions
-  2. Machine learning is the intelligence technology developed for expert machines to facilitate the learning processes of various tasks
-  3. Machine learning and Artificial intelligence are synonymous
-  4. Machine learning is the intelligence technology that provides computers with advanced abilities to execute processes without being specifically programmed to do so
-Please enter the number of your answer:  4
-Correct!
+# Create a simulated dataset with 3 features
+np.random.seed(0)
+n_samples = 100
+feature1 = np.random.rand(n_samples)
+feature2 = 2 * feature1 + np.random.rand(n_samples)
+feature3 = 0.5 * feature1 - 2 * feature2 + np.random.rand(n_samples)
 
-Q3: True or False: The late 1980s marked a resurgence in the development of artificial intelligence (AI), driven by advancements in areas like chess and computer vision.
-  1. True
-  2. False
-Please enter the number of your answer:  1
-Correct!
+# Combine the features into a single dataset
+X = np.column_stack((feature1, feature2, feature3))
 
-Your total score is 3/3
+# Apply PCA to reduce the dimensionality to 2 principal components
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X)
+
+# Visualize the original and PCA-reduced data
+plt.figure(figsize=(12, 5))
+
+plt.subplot(1, 2, 1)
+plt.scatter(X[:, 0], X[:, 1])
+plt.title("Original Data")
+
+plt.subplot(1, 2, 2)
+plt.scatter(X_pca[:, 0], X_pca[:, 1])
+plt.title("PCA-Reduced Data")
+
+plt.tight_layout()
+plt.show()
+
+# Print the explained variance ratio
+explained_variance_ratio = pca.explained_variance_ratio_
+print("Explained Variance Ratio:", explained_variance_ratio)
+
+
+
+3. Hypothesis Space Complexity
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate some example data
+np.random.seed(0)
+X = 2 * np.random.rand(100, 1)
+y = 3 * X + np.random.randn(100, 1)
+
+# Simple Hypothesis Space (e.g., linear model)
+def simple_hypothesis(X, theta0, theta1):
+    return theta0 + theta1 * X
+
+# Complex Hypothesis Space (e.g., high-degree polynomial)
+def complex_hypothesis(X, theta):
+    # Using a 9th-degree polynomial
+    return np.sum(theta[i] * X**i for i in range(len(theta)))
+
+# Fit the models
+theta_simple = np.polyfit(X.flatten(), y.flatten(), 1)
+theta_complex = np.polyfit(X.flatten(), y.flatten(), 9)
+
+# Generate predictions
+X_test = np.linspace(0, 2, 100).reshape(-1, 1)
+y_simple = simple_hypothesis(X_test, theta_simple[1], theta_simple[0])
+y_complex = complex_hypothesis(X_test, theta_complex)
+
+# Plot the data and models
+plt.figure(figsize=(10, 6))
+plt.scatter(X, y, label='Data')
+plt.plot(X_test, y_simple, label='Simple Hypothesis Space (Linear)')
+plt.plot(X_test, y_complex, label='Complex Hypothesis Space (9th-degree Polynomial)')
+plt.xlabel('X')
+plt.ylabel('y')
+plt.legend()
+plt.title('Simple vs. Complex Hypothesis Space')
+plt.show()
+
+
+// Example
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_classification
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.pipeline import make_pipeline
+
+# Generate a synthetic dataset for binary classification
+X, y = make_classification(n_samples=100, n_features=1, n_informative=1, n_redundant=0, n_clusters_per_class=1, random_state=42)
+
+# Simple Hypothesis Space (Linear)
+model_simple = LogisticRegression()
+model_simple.fit(X, y)
+
+# Complex Hypothesis Space (Polynomial)
+model_complex = make_pipeline(PolynomialFeatures(10), LogisticRegression())
+model_complex.fit(X, y)
+
+# Generate a range of X values for plotting
+X_plot = np.linspace(X.min(), X.max(), 300).reshape(-1, 1)
+
+# Predictions
+y_pred_simple = model_simple.predict_proba(X_plot)[:, 1]
+y_pred_complex = model_complex.predict_proba(X_plot)[:, 1]
+
+# Plot the data and decision boundaries
+plt.figure(figsize=(10, 6))
+plt.scatter(X, y, color='blue', label='Data')
+plt.plot(X_plot, y_pred_simple, color='green', label='Simple Hypothesis (Linear)')
+plt.plot(X_plot, y_pred_complex, color='red', label='Complex Hypothesis (Polynomial)')
+plt.xlabel('X')
+plt.ylabel('y')
+plt.legend()
+plt.title('Simple vs. Complex Hypothesis Space for Classification')
+plt.show()
+
+
+
+
+
+
+
