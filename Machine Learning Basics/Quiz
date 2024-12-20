@@ -48,4 +48,320 @@ True    --> yes
 
 
 
+3.) Pipeline of Machine Learning:
 
+
+
+1. Why is data gathering a critical first step in the machine learning workflow?
+
+Data gathering is an optional step in the machine learning workflow and doesn't significantly impact the model's performance.
+Models can learn effectively without a representative dataset.
+Data gathering provides the foundation for training and testing models, ensuring they are representative of real-world scenarios.      --> correct
+Data gathering provides the foundation for testing models only, ensuring they are representative of real-world scenarios.
+
+
+2. What is the purpose of the training and testing phases in the workflow?
+
+The purpose of the training and testing phases in the workflow is to ensure that the model can learn patterns from the data and generalize its knowledge to make accurate predictions on new, unseen data.   --> correct
+The training and testing phases in the workflow are irrelevant and can be skipped since models inherently understand all types of data without any need for learning or evaluation.
+The purpose of the training and testing phases in the workflow is to ensure that the model can learn patterns from the data and memorize the learned patterns.
+
+
+3. Why is model evaluation crucial in the machine learning workflow?
+
+Model evaluation measures the performance of the model and ensures its effectiveness on new, unseen data.    --> correct
+Model evaluation provides a way to quickly complete the machine learning project.
+Model evaluation is unnecessary as machine learning models always perform perfectly.
+
+
+
+
+
+4.) Types of Machine Learning Systems:
+
+
+1. What is the key distinction between supervised and unsupervised learning?
+
+Supervised learning uses labeled data, while unsupervised learning works with unlabeled data to find patterns   --> correct
+Unsupervised learning uses labeled data, while supervised learning works with unlabeled data to find patterns
+
+
+2. Select the correct example of a real-world application for each type of machine learning.
+
+Supervised learning in email spam filtering, reinforcement learning in customer segmentation, and unsupervised learning in training self-driving cars.
+Supervised learning in email spam filtering, unsupervised learning in customer segmentation, and reinforcement learning in training self-driving cars.   --> correct
+
+
+
+3. Select the correct machine learning type for Supervised learning
+
+Involves agents interacting with an environment to maximize rewards through learned actions.
+Uses labeled data to make predictions based on previously known outcomes.    --> correct
+Trains models on unlabeled data to discover hidden patterns and groupings.
+
+
+
+
+
+5.) Types of Supervised Learning
+
+
+
+1.What is the difference between supervised and unsupervised machine learning?. Which of the following statements are true?
+
+Supervised learning is used when we want to predict a certain outcome from a given input.    --> correct
+There are two major types of supervised learning problems, called clustering and regression.
+The goal for unsupervised learning is to model the underlying structure or distribution in the data.    --> correct
+Supervised learning problems can be grouped into clustering and association.
+
+
+2. Select which of the following scenarios are regression problems.
+
+Predict the score that a student will achieve in an exam whose grade can be 0.1, 2,. . . , 10    --> correct
+Given a tweet, determine whether or not it contains text against or on favor for a presidential candidate.
+Predict whether a user will churn from the service.
+Predict how much a company will spend on electricity the next semester     --> correct
+
+
+3. Select which of the following scenarios are classification problems.
+
+Impact of blood alcohol content on coordination
+Determine whether a customer is likely to purchase more items or not    --> correct 
+An algorithm is trained to recognize spam email by learning the characteristics of what constitutes spam vs non-spam email.    --> correct
+Predict the prices of a house in Boston based on zipcode, neighbourhood, the per capita crime rate by town, etc
+
+
+
+4. Suppose you want to develop a supervised machine learning model to predict whether a superhero will fly or not. Which of the following statements are true?
+
+A regression model is the best way to predict the probability to fly.
+A classification model provide the best approach.     --> correct
+This is not a machine learning problem
+We'll use unlabeled examples to train the model.
+
+
+
+
+6.) Types of Unsupervised Learning:
+
+
+
+1. True or False: Clustering is a common task in unsupervised learning, where data points are grouped together based on similarity
+
+True    --> correct
+False
+
+
+2. Imagine you work for an e-commerce company. The company has a large database of customer transactions, and your task is to segment customers into different groups for targeted marketing. Which unsupervised learning technique would you use?
+
+For customer segmentation in e-commerce, you can use a dimensional reduction algorithms like PCA.
+For customer segmentation in e-commerce, you can use clustering algorithms like K-means or hierarchical clustering.   -->correct
+
+
+3. You are a financial analyst at a bank and need to detect potentially fraudulent transactions in a credit card dataset. How could unsupervised learning be applied to identify unusual transaction patterns indicative of fraud?
+
+Unsupervised learning can NOT be applied to detect fraudulent transactions.
+Unsupervised learning can be applied to detect fraudulent transactions by training a supervised machine learning model on a labeled dataset of fraudulent and non-fraudulent transactions.
+Unsupervised learning can be applied to detect fraudulent transactions by clustering normal and abnormal transaction patterns or using outlier detection methods to identify unusual transaction behavior.    --> correct
+
+
+
+
+7.) Knowledge test:
+
+
+
+1. Customer Segmentation for Marketing Strategy
+
+Given a dataset containing customer demographics and purchase history, how can we group customers based on their similarities to tailor marketing strategies?
+
+Unsupervised Learning     --> correct
+Supervised Learning
+
+
+2. Anomaly Detection in Network Traffic
+
+How can we identify unusual patterns or anomalies in network traffic that may indicate a security breach, without having prior labeled examples of such incidents?
+
+Both options are possible
+Supervised Learning
+Unsupervised Learning    --> correct
+
+
+3. Predicting Housing Prices based on Features
+
+Given historical data on housing prices and features such as location, size, and amenities, can we build a model to predict the prices of new houses?
+
+Unsupervised Learning
+Supervised Learning    --> correct
+Both options are possible
+
+
+4. Predicting Customer Satisfaction for an E-commerce Website
+
+Given customer feedback data on an e-commerce website where customers can rate their satisfaction on a scale from 1 to 5, should we model this problem as a classification or a regression task?
+
+Both options are possible    --> correct
+Regression problem
+Classification problem
+
+
+5. You are a healthcare researcher aiming to identify potential subgroups of patients based on their medical records to personalize treatment plans. How could unsupervised learning be utilized to uncover distinct patient clusters with similar medical profiles, allowing for more targeted and effective healthcare interventions?
+
+Unsupervised learning can classify patients into predefined categories based on their medical records.
+Unsupervised learning can only be used if the dataset contains labeled patient groups.
+Unsupervised learning is not applicable in this scenario, and supervised learning should be used instead.
+Unsupervised learning can segment patients into clusters based on their medical records, revealing distinct subgroups without using any predefined labels.   --> correct
+
+
+6. You are an e-commerce manager and want to predict whether customers are likely to make a purchase during their website visit. How can supervised learning be applied to develop a predictive model that helps classify customers into 'potential buyers' and 'non-buyers' based on historical data and labeled purchase information?
+
+Supervised learning can be employed to classify customers into groups based on their purchase history and other features, allowing for targeted marketing strategies.   -->correct
+Supervised learning requires an unsupervised learning pre-processing step to classify customers effectively.
+Supervised learning is not suitable for this scenario, and unsupervised learning should be used instead.
+Supervised learning can only be used if the purchase data is anonymized and doesn't contain labels.
+
+
+
+
+
+8.) What data features are important for machine learning projects or applications?
+
+
+
+1. True or False:Incorporating irrelevant features in a machine learning model can improve its predictive performance
+
+False     --> correct
+True
+
+
+
+2. True or False: Feature selection in machine learning helps in reducing the dimensionality of the dataset.
+
+False
+True   --> correct
+
+
+3. Scenario Question
+
+You are tasked with developing a spam email filter using machine learning. The dataset you have contains email samples labeled as "spam" or "not spam." Which features would you consider important for this classification task?
+
+A. Sender's Email Address B. Word Frequency in the Email C. Font Style and Size D. Number of Links in the Email E. Email Attachment Size
+
+Select the correct options:
+
+A, D, E
+B, D, A
+A, C, E
+B, D, E   --> correct
+
+
+4. Scenario Question
+
+You are working on a machine learning project to predict customer churn for a subscription-based service. The dataset you have includes customer information such as age, usage patterns, subscription type, and a unique customer ID for each record.
+Why would using the customer ID as a feature for predicting churn be ineffective?
+
+The customer ID is a unique identifier and does not contain predictive information regarding the likelihood of churn.    --> correct
+Using the customer ID as a feature may raise privacy concerns and ethical considerations, as it directly identifies individuals.
+The customer ID is not related to the underlying reasons for churn and including it may introduce noise into the predictive model.
+
+
+
+
+9.) How much data is needed for machine learning?
+
+
+
+1. True or False: Having a large dataset guarantees high data quality
+
+True
+False    --> correct
+
+
+2. True or False: Data quality is a subjective term and does not have a universally agreed-upon definition
+
+False
+True   --> correct
+
+
+3. Scenario Question
+
+You are working on a project to predict student performance based on various factors such as study hours, attendance, and extracurricular activities. The dataset you have includes information about these features for each student.
+
+In this scenario, what would be an example of a high-quality dataset ?
+
+A. A dataset with accurate and up-to-date information about study hours, attendance, and extracurricular activities for a diverse set of students.
+
+B. A dataset with study hours as the only feature for a small subset of students.
+
+C. A dataset with random and inconsistent entries for study hours, attendance, and extracurricular activities.
+
+D. A dataset with missing values for most of the entries related to study hours, attendance, and extracurricular activities.
+
+Please select the most appropriate option and provide reasoning for your choice.
+
+D
+C
+A     --> correct
+B
+
+
+
+10.) What is a Hypothesis in Machine Learning?
+
+
+1. What does the hypothesis (h (x)) represent in machine learning?
+
+Activity description...
+
+The predicted output based on the input features and model parameters.    --> correct
+The ground truth or actual output of the training data.
+The features of the dataset.
+The target variable to be predicted.
+
+
+
+
+
+11.)  Hypothesis space:
+
+
+
+1. True or False: A larger hypothesis space always leads to better model performance.
+
+False    --> correct
+True
+
+
+2. True or False: Overfitting occurs when the hypothesis space is too complex for the given data.
+
+True     --> correct
+False
+
+
+3. Scenario Question
+
+You are a data scientist working on a binary classification problem. You have tried two different models for the task. Model A uses a simple hypothesis space with a linear model, while Model B employs a more complex hypothesis space with a high-degree polynomial. After evaluating both models, you notice that Model B fits the training data almost perfectly, but its performance on new, unseen data is not as good. On the other hand, Model A generalizes better to unseen data.
+
+Based on this scenario, which model is likely suffering from overfitting?
+
+Model B, because it fits the training data almost perfectly.    --> correct
+Neither model is suffering from overfitting.
+Model A, because it uses a linear hypothesis space.
+Both models are suffering from overfitting.
+
+
+
+12.)  Real case of study
+
+
+1. True/False: The primary goal of the case study is to understand the practical aspects of applying machine learning techniques to predict and mitigate customer churn.
+
+True    --> correct
+False
+
+
+2. True/False: The dataset for this case study includes customer demographics, usage patterns, contract details, and customer service interactions.
+
+True     ---> correct
+False
