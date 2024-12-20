@@ -1,0 +1,79 @@
+# Define the quiz questions and correct answers
+quiz_questions = [
+    {
+        "question": "Artificial Intelligence is _____",
+        "options": [
+            "a branch of computer algorithms that facilitates an expert machine to make accurate predictions",
+            "is a branch of computer science constituting underlying technology that governs expert machines",
+            "a branch of computer science that constitutes underlying technology that enables computers to simulate human intelligence"
+        ],
+        "correct_answer": 2  # The correct answer is the 3rd option (index 2)
+    },
+    {
+        "question": "Which of the following statements about machine learning is TRUE?",
+        "options": [
+            "Machine learning is the intelligent technology an expert system uses to make accurate predictions",
+            "Machine learning is the intelligence technology developed for expert machines to facilitate the learning processes of various tasks",
+            "Machine learning and Artificial intelligence are synonymous",
+            "Machine learning is the intelligence technology that provides computers with advanced abilities to execute processes without being specifically programmed to do so"
+        ],
+        "correct_answer": 3  # The correct answer is the 4th option (index 3)
+    },
+    {
+        "question": "True or False: The late 1980s marked a resurgence in the development of artificial intelligence (AI), driven by advancements in areas like chess and computer vision.",
+        "options": ["True", "False"],
+        "correct_answer": 0  # The correct answer is "True" (index 0)
+    }
+]
+
+# Function to display the quiz and check answers
+def run_quiz():
+    score = 0  # Initialize score to 0
+    for i, question in enumerate(quiz_questions):
+        print(f"Q{i + 1}: {question['question']}")
+        for j, option in enumerate(question["options"]):
+            print(f"  {j + 1}. {option}")
+        
+        # Get the user's answer
+        answer = int(input("Please enter the number of your answer: ")) - 1
+        
+        # Check if the answer is correct
+        if answer == question["correct_answer"]:
+            print("Correct!\n")
+            score += 1  # Increment score if correct
+        else:
+            print(f"Incorrect! The correct answer was: {question['options'][question['correct_answer']]}\n")
+    
+    # Print the user's score
+    print(f"Your total score is {score}/{len(quiz_questions)}")
+
+# Run the quiz
+run_quiz()
+
+
+
+
+
+
+Q1: Artificial Intelligence is _____
+  1. a branch of computer algorithms that facilitates an expert machine to make accurate predictions
+  2. is a branch of computer science constituting underlying technology that governs expert machines
+  3. a branch of computer science that constitutes underlying technology that enables computers to simulate human intelligence
+Please enter the number of your answer:  3
+Correct!
+
+Q2: Which of the following statements about machine learning is TRUE?
+  1. Machine learning is the intelligent technology an expert system uses to make accurate predictions
+  2. Machine learning is the intelligence technology developed for expert machines to facilitate the learning processes of various tasks
+  3. Machine learning and Artificial intelligence are synonymous
+  4. Machine learning is the intelligence technology that provides computers with advanced abilities to execute processes without being specifically programmed to do so
+Please enter the number of your answer:  4
+Correct!
+
+Q3: True or False: The late 1980s marked a resurgence in the development of artificial intelligence (AI), driven by advancements in areas like chess and computer vision.
+  1. True
+  2. False
+Please enter the number of your answer:  1
+Correct!
+
+Your total score is 3/3
